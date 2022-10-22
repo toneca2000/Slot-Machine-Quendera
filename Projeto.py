@@ -39,37 +39,35 @@ def game():
         bet = swing(bet)
         creds += bet
         print("Tu tens ", creds, "creditos")
-        #if(creds!=0 ):
-            #answer = input("Quer continuar ? ")
-            #while ((answer != 'sim' ) and (answer != 'não') and (answer != 'Não') and (answer != 'Sim') ):
-                #answer = input("Resposta Inválida! ")
-            #if((answer == 'não') or (answer == 'Não')):
-                #print("Obrigado por jogar!")
-                #return
+        if(creds!=0 ):
+            answer = input("Quer continuar ? ")
+            while ((answer != 'sim' ) and (answer != 'não') and (answer != 'Não') and (answer != 'Sim') ):
+                answer = input("Resposta Inválida! ")
+            if((answer == 'não') or (answer == 'Não')):
+                print("Obrigado por jogar!")
+                return
     
     print("Perdeste!")
         
         
 def swing(bet):
-    swing_out1 = Slot(157)
-    swing_out2 = Slot(157)
-    swing_out3 = Slot(157)
-    print( swing_out1.simbol_out, swing_out2.simbol_out, swing_out3.simbol_out)
-    if ((swing_out1.simbol_out == swing_out2.simbol_out) and (swing_out2.simbol_out == swing_out3.simbol_out)):
+    slot = Slot(157)
+    print( slot.swing(), slot.swing(), slot.swing())
+    if ((slot.swing() == slot.swing()) and (slot.swing() == slot.swing())):
         print("Parabens!")
-        if(swing_out1.simbol_out == '#'):
+        if(slot.swing() == '#'):
             return bet*5
-        if(swing_out1.simbol_out == '$'):
+        if(slot.swing() == '$'):
             return bet*10
-        if(swing_out1.simbol_out == '%'):
+        if(slot.swing() == '%'):
             return bet*20
-        if(swing_out1.simbol_out == '&'):
+        if(slot.swing() == '&'):
             return bet*70
-        if(swing_out1.simbol_out == '@'):
+        if(slot.swing() == '@'):
             return bet*200
-        if(swing_out1.simbol_out == '§'):
+        if(slot.swing() == '§'):
             return bet*1000
-        if(swing_out1.simbol_out == '£'):
+        if(slot.swing() == '£'):
             return bet*100000
     else:
         print("Azar !")
