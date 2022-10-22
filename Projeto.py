@@ -38,15 +38,16 @@ def game():
         creds = creds - bet
         bet = swing(bet)
         creds += bet
-        print("You have ", creds, "credits")
-        answer = input("Do you wish to continue ? ")
-        while ((answer != 'yes' ) and (answer != 'no') and (answer != 'No') and (answer != 'Yes') ):
-            answer = input("Invalid answer! ")
-        if((answer == 'no') or (answer == 'No')):
-            print("Thank you for playing!")
-            return
+        print("Tu tens ", creds, "creditos")
+        #if(creds!=0 ):
+            #answer = input("Quer continuar ? ")
+            #while ((answer != 'sim' ) and (answer != 'não') and (answer != 'Não') and (answer != 'Sim') ):
+                #answer = input("Resposta Inválida! ")
+            #if((answer == 'não') or (answer == 'Não')):
+                #print("Obrigado por jogar!")
+                #return
     
-    print("You lost!")
+    print("Perdeste!")
         
         
 def swing(bet):
@@ -71,7 +72,7 @@ def swing(bet):
         if(swing_out1.simbol_out == '£'):
             return bet*100000
     else:
-        print("Too bad !")
+        print("Azar !")
         return 0
 
 
